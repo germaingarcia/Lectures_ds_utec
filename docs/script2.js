@@ -178,9 +178,9 @@ var mouseclick=function(d){
         if(line_Group!=undefined){
             line_Group.selectAll("*").remove();
         }
-        driver = document.getElementById("driver");
-        driver.style.setProperty("--x", "0px");
-        driver.style.setProperty("--y", "0px");
+        //driver = document.getElementById("driver");
+        //driver.style.setProperty("--x", "0px");
+        //driver.style.setProperty("--y", "0px");
 
         flag_opacity=false;
     }else{
@@ -237,6 +237,8 @@ function draw_Lecture_Rectangles(){
     //    return d.name 
     //})
     .style("text-anchor", "middle");
+
+    
     all_lectures.forEach(d=>{
         let i =1;
         let temporal = d3.select("#text_"+d.code);
@@ -244,15 +246,25 @@ function draw_Lecture_Rectangles(){
             i++;
             temporal.append('tspan')
             .attr("x",  d=> d.position[0] + titleScale.bandwidth()/2)
-            .attr("y",d.position[1]+i*13)
+            .attr("y",d.position[1]+i*15)
             .text(e);
         });
         temporal.append('tspan')
         .attr("class",'quantityClass')
         .attr("x",  d=> d.position[0] + titleScale.bandwidth()/2)
-        .attr("y", d.position[1]+yRectScales.bandwidth()-5)
+        .attr("y", d=>d.position[1]+yRectScales.bandwidth()-5)
         .text(d=>"("+d.creditos+" Créditos)")        
+
+        temporal.append('tspan')
+        .attr("class",'quantityClass')
+        .attr("x",  d=> d.position[0] + titleScale.bandwidth()/2)
+        .attr("y", d=> d.position[1]+ 13)
+        .text(d=>d.code)  
+
     });
+
+
+    
 
     //Drawing rectangles transparent to protect
     gRectanglesAbstract =gtemp.append("g")
@@ -329,9 +341,9 @@ function drawLines(t){
         show_Alternos_Pos(r);
     }
 
-    driver = document.getElementById("driver"),
-    driver.style.setProperty("--x", (materia.position[0]+titleScale.bandwidth()/2+50).toString() + "px");
-    driver.style.setProperty("--y", (materia.position[1] + yRectScales.bandwidth()+5).toString() + "px");
+    //driver = document.getElementById("driver"),
+    //driver.style.setProperty("--x", (materia.position[0]+titleScale.bandwidth()/2+50).toString() + "px");
+    //driver.style.setProperty("--y", (materia.position[1] + yRectScales.bandwidth()+5).toString() + "px");
 
 }
 
