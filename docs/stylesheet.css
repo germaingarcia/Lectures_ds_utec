@@ -13,16 +13,17 @@ html, body {
 
 body {
     background: #88A5B0;
+    overflow: hidden; 
 }
 
 svg {
-    height: 100vh;
+    height: 95vh;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 #top, #bottom, #left, #right {
