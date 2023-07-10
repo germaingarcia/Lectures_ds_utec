@@ -13,16 +13,17 @@ html, body {
 
 body {
     background: #88A5B0;
+    overflow: hidden; 
 }
 
 svg {
-    height: 100vh;
+    height: 95vh;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 #top, #bottom, #left, #right {
@@ -142,6 +143,9 @@ svg {
     height: 80px;
 }
 
+.EL{
+    fill: lightgrey;
+}
 
 .title{
     fill: white;
@@ -203,7 +207,7 @@ svg {
 #horas {
     stroke: rgb(131, 129, 129);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     stroke-width: 1px;
     font-weight: lighter;
 }
