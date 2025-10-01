@@ -28,6 +28,7 @@ var title_space ={'x':135, 'y':75,'w':1355,'h':25},
 var flag_opacity = false;
 var line_Group;
 
+//================================= UPDATE ONLY FROM THIS POINT ====================================
 var 
 CS1111= new Lecture(1,[],1,"CS1111","&Programación I","cs",4,"https://utec.edu.pe/carreras/ciencia-de-datos/malla-curricular"),
 CC1101= new Lecture(2,[],1,"CC1101","Cálculo de&una Variable","ciencias_generales",4,"https://utec.edu.pe/carreras/ciencia-de-datos/malla-curricular"),
@@ -95,6 +96,8 @@ DS5012= new Lecture(5,[DS5102],10,"DS5012","Proyecto Final&Ciencia&de Datos II",
 ELIII= new Lecture(6,[],10,"ELIII","&Electivo&Libre 3","EL",4,"https://utec.edu.pe/carreras/ciencia-de-datos/malla-curricular");
 
 var all_lectures =[CS1111,CC1101,DS1000,CS1021,HH1101,PI1101,CS1112,CC1104,CC1103,CC1123,CS1022,HH1102,CC2101,CC1105,CS2031,CS2013,CS2041,PI2102,CC2104,CS2023,CC2102,CS2032,DS2011,GI2101,DS3012,CS3026,DS3021,CS2042,HH2101,PI3103,CS3061,CS4052,DS3022,DS3031,HH2102,GI3101,DS4341,DS4051,DS4061,CS5364,EL,CS4091,PR4101,HH3101,DS5044,DS5342,HH5101,GI4101,DS5102,ELII,DS5343,DS5045,GI5101,DS5012,ELIII];
+
+//============================================= UNTIL HERE =============================
 
 all_lectures.forEach(d=>{ all_lectures.forEach(e=>{  if ((e.pre).includes(d)) { d.add_pos(e);  }   }); });
 //First step is to put the titles
@@ -399,4 +402,5 @@ function show_Alternos_Pos(materia){
         d3.select("#"+'text_'+r.code).attr("fill-opacity", 1);
         show_Alternos_Pos(r);
     }
+
 }
